@@ -56,17 +56,15 @@ public class MenuBienven {
 	 */
 	private void initialize() {
 		menuPP = new JFrame();
-		menuPP.setBounds(600, 600, 800, 800);
+		menuPP.setBounds(600, 600, 668, 571);
 		menuPP.setLocationRelativeTo(null);
 		menuPP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		menuPP.getContentPane().setLayout(null);
 
-		inicializarTF_IngresarPrecioPorMetro();
-		inicializarTF_IngresarPorcentaje300km();
 		inicializarTF_IngresarIncrementoPorProvincia();
 		inicializarBotonEnviar();
 		limitarInputUsuario(textFieldIngresarPrecioPorMts);
-		limitarInputUsuario(textFieldIngresarPorcenjeAumento);
+
 		limitarInputUsuario(textFieldIngresarAumentoProvincia);
 		
 		asignarFondo();
@@ -105,7 +103,7 @@ public class MenuBienven {
 				}
 			}
 		});
-		btnEnviar.setBounds(443, 488, 105, 30);
+		btnEnviar.setBounds(432, 464, 105, 30);
 		menuPP.getContentPane().add(btnEnviar);
 	}
 	private void limitarInputUsuario(JTextField tf) {
@@ -124,10 +122,10 @@ public class MenuBienven {
 	}
 	
 	private void cambiarDeVentana(){
-		vistaMapa = new VistaMapa();
+		vistaMapa = new RegArg();
 		menuPP.setVisible(false);
-		vistaMapa.ventana.setVisible(true);
-		vistaMapa.ventana.setResizable(false);
+		RegArg.ventana.setVisible(true);
+		RegArg.ventana.setResizable(false);
 	}
 	
 	private void asignarFondo(){
