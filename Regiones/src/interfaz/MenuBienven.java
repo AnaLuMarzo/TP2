@@ -72,23 +72,6 @@ public class MenuBienven {
 		asignarFondo();
 	}
 	
-	
-	private void inicializarTF_IngresarPrecioPorMetro() {
-		textFieldIngresarPrecioPorMts = new JTextField();
-		setTp(new TextoTranslucido("PRECIO POR METRO", textFieldIngresarPrecioPorMts));
-		textFieldIngresarPrecioPorMts.setBounds(142,470, 178, 68);
-		menuPP.getContentPane().add(textFieldIngresarPrecioPorMts);
-		textFieldIngresarPrecioPorMts.setColumns(10);
-	}
-	
-	private void inicializarTF_IngresarPorcentaje300km() {
-		textFieldIngresarPorcenjeAumento = new JTextField();
-		setTp(new TextoTranslucido("COSTO POR SUPERAR 300KM", textFieldIngresarPorcenjeAumento));
-		textFieldIngresarPorcenjeAumento.setBounds(408, 520, 178, 68);
-		menuPP.getContentPane().add(textFieldIngresarPorcenjeAumento);
-		textFieldIngresarPorcenjeAumento.setColumns(10);
-	}
-	
 	private void inicializarTF_IngresarIncrementoPorProvincia() {
 		textFieldIngresarAumentoProvincia = new JTextField();
 		setTp(new TextoTranslucido("INCREMENTO POR PROVI.", textFieldIngresarAumentoProvincia));
