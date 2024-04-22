@@ -3,8 +3,6 @@ package interfaz;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import negocio.Calculo;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -21,12 +19,10 @@ public class MenuBienven {
 	private JFrame frame;
 	
 	public JFrame menuPP;
-	private JTextField textFieldIngresarPrecioPorMts;
+	private JTextField textFieldIngresarArista;
 	private JButton btnEnviar;
 	private JLabel lblFondo;
 	RegArg vistaMapa;
-	static Double precioPormetro;
-	static Double costoPorPasarProvincia;
 
 	/**
 	 * Launch the application.
@@ -63,24 +59,23 @@ public class MenuBienven {
 
 		inicializarTF_IngresarIncrementoPorProvincia();
 		inicializarBotonEnviar();
-		limitarInputUsuario(textFieldIngresarPrecioPorMts);
-
-		limitarInputUsuario(textFieldIngresarAumentoProvincia);
+		limitarInputUsuario(textFieldIngresarArista);
 		
 		asignarFondo();
 	}
-	
+	JLabel lbl2048 = new JLabel("Ingresar similaridad entre provincias"); // en medio de la pantalla
+		lbl2048.setForeground(new Color(255, 255, 255));
+		lbl2048.setFont(new Font("Segoe UI Black", Font.PLAIN, 82));
+		lbl2048.setBounds(120, 28, 244, 187);
+		frame.getContentPane().add(lbl2048);
+
+
 	private void inicializarTF_IngresarIncrementoPorProvincia() {
-		textFieldIngresarAumentoProvincia = new JTextField();
-		setTp(new TextoTranslucido("INCREMENTO POR PROVI.", textFieldIngresarAumentoProvincia));
-		textFieldIngresarAumentoProvincia.setBounds(747, 520, 178, 68);
-		menuPP.getContentPane().add(textFieldIngresarAumentoProvincia);
-		textFieldIngresarAumentoProvincia.setColumns(10);
+		
 	}
 
-	private boolean estanLos3TexfieldActivados() {
-		if (!textFieldIngresarPrecioPorMts.getText().isEmpty() && !textFieldIngresarPorcenjeAumento.getText().isEmpty()
-				&& !textFieldIngresarAumentoProvincia.getText().isEmpty()) {
+	private boolean casilleroCompleto() {
+		if (!textFieldIngresarArista.getText().isEmpty()) {
 			return true;
 		}
 			return false;
@@ -91,10 +86,7 @@ public class MenuBienven {
 
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (estanLos3TexfieldActivados()) {
-					precioPormetro=Double.parseDouble(textFieldIngresarPrecioPorMts.getText() );
-					costoPorPasarProvincia=Double.parseDouble(textFieldIngresarAumentoProvincia.getText() );
-					porcentajeExtra300km=Double.parseDouble(textFieldIngresarPorcenjeAumento.getText() );
+				if (casilleroCompleto()) {
 					
 					cambiarDeVentana();
 				}
